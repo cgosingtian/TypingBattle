@@ -7,9 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "KLBConstants.h"
 
 @interface KLBTimer : NSObject
 {
     NSThread *timer;
+    int currentTime;
+    bool startTimer;
 }
+-(int)getTimeInt;
+-(void)startTimer;
+-(void)stopTimer;
+-(void)resetValues;
+-(void)countDown;
+-(void)checkEndTime;
 @end

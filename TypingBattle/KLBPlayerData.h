@@ -16,7 +16,10 @@
 - (id)initWithScore:(NSInteger)s;
 
 - (void) setScore:(NSInteger)s;
+- (void) setZero;
 - (NSInteger) getScore;
+
+- (void) resetValues;
 
 - (void) dealloc;
 

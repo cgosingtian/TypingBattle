@@ -695,8 +695,8 @@
                     <textField verticalHuggingPriority="750" id="fUj-dk-QXL">
                         <rect key="frame" x="20" y="96" width="440" height="37"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="YNG-lb-CRf">
-                            <font key="font" metaFont="system"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" state="on" borderStyle="bezel" alignment="center" placeholderString="Type your answer here; press ENTER to submit!" drawsBackground="YES" usesSingleLineMode="YES" id="YNG-lb-CRf">
+                            <font key="font" size="18" name="LucidaGrande"/>
                             <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                             <connections>

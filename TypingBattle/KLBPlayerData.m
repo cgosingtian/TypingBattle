@@ -24,11 +24,11 @@
         //Listen for score updates
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(updateScore:)
-                                                     name:SUBMIT_CORRECT
+                                                     name:KLB_SUBMIT_CORRECT
                                                    object:nil];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(updateScore:)
-                                                     name:SUBMIT_WRONG
+                                                     name:KLB_SUBMIT_WRONG
                                                    object:nil];
     }
     
@@ -44,14 +44,19 @@
 //        score = SCORE_STARTING;
 //    }
     
-    return [self initWithScore:SCORE_STARTING];
+    return [self initWithScore:KLB_SCORE_STARTING];
 }
 
 #pragma mark - Getters/Setters
 - (void) setScore:(NSInteger) s
 {
     score += s;
-    [[NSNotificationCenter defaultCenter] postNotificationName:SCORE_UPDATED object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SCORE_UPDATED object:nil];
+}
+- (void) setScoreZero
+{
+    score = 0;
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SCORE_UPDATED object:nil];
 }
 - (NSInteger) getScore
 {
@@ -62,16 +67,21 @@
 {
     NSLog(@"%@: Entered updateScore in player", [notice name]);
     //if ([[[notice userInfo] valueForKey:ANSWER_KEY] isEqualToValue:[NSNumber numberWithInt:SCORE_CORRECT]])
-    if ([[notice name] isEqualToString:SUBMIT_CORRECT])
+    if ([[notice name] isEqualToString:KLB_SUBMIT_CORRECT])
     {
         NSLog(@"attempting to increase score...");
-        [self setScore:SCORE_CORRECT];
+        [self setScore:KLB_SCORE_CORRECT];
     }
     else
     {
         NSLog(@"attempting to reduce score...");
-        [self setScore:SCORE_WRONG_PENALTY];
+        [self setScore:KLB_SCORE_WRONG_PENALTY];
     }
+}
+
+- (void) resetValues
+{
+    [self setScoreZero];
 }
 
 - (void) dealloc

@@ -18,6 +18,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "KLBPlayerData.h"
+#import "KLBTimer.h"
 
 @interface KLBAppDelegate : NSObject <NSApplicationDelegate>
 {
@@ -27,12 +28,16 @@
     IBOutlet NSTextField *tfAnswerField;
     
     KLBPlayerData *player;
+    
+    KLBTimer *timer;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 
-- (void)setupIBNotifications;
 - (IBAction)submitTypedChars:(id)sender;
 - (void)changeQuizString:(id)sender;
+- (void)setupIBNotifications;
+-(void)checkSubmittedString:(NSNotification *)notification;
+-(void)updateTime;
 
 @end
