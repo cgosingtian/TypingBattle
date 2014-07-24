@@ -1,0 +1,87 @@
+//
+//  KLBPlayerData.m
+//  TypingBattle
+//
+//  Created by Chase Gosingtian on 7/24/14.
+//  Copyright (c) 2014 KLab Cyscorpions, Inc. All rights reserved.
+//
+
+#import "KLBPlayerData.h"
+#import "KLBConstants.h"
+
+@implementation KLBPlayerData
+
+#pragma mark - Initializers
+
+- (id) initWithScore:(NSInteger)s
+{
+    self = [super init];
+    
+    if (self)
+    {
+        score = s;
+        
+        //Listen for score updates
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(updateScore:)
+                                                     name:SUBMIT_CORRECT
+                                                   object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(updateScore:)
+                                                     name:SUBMIT_WRONG
+                                                   object:nil];
+    }
+    
+    return self;
+}
+
+- (id) init
+{
+//    self = [super init];
+//    
+//    if (self)
+//    {
+//        score = SCORE_STARTING;
+//    }
+    
+    return [self initWithScore:SCORE_STARTING];
+}
+
+#pragma mark - Getters/Setters
+- (void) setScore:(NSInteger) s
+{
+    score += s;
+    [[NSNotificationCenter defaultCenter] postNotificationName:SCORE_UPDATED object:nil];
+}
+- (NSInteger) getScore
+{
+    return score;
+}
+
+- (void) updateScore:(NSNotification *)notice
+{
+    NSLog(@"%@: Entered updateScore in player", [notice name]);
+    //if ([[[notice userInfo] valueForKey:ANSWER_KEY] isEqualToValue:[NSNumber numberWithInt:SCORE_CORRECT]])
+    if ([[notice name] isEqualToString:SUBMIT_CORRECT])
+    {
+        NSLog(@"attempting to increase score...");
+        [self setScore:SCORE_CORRECT];
+    }
+    else
+    {
+        NSLog(@"attempting to reduce score...");
+        [self setScore:SCORE_WRONG_PENALTY];
+    }
+}
+
+- (void) dealloc
+{
+    // release observerssssss
+    
+    
+    
+    [self release];
+    [super dealloc];
+}
+
+@end

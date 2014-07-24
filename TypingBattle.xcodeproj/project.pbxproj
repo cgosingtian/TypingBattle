@@ -18,6 +18,10 @@
 		4F5AFCCB1980B4D70087E89F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AFCAA1980B4D70087E89F /* Cocoa.framework */; };
 		4F5AFCD31980B4D70087E89F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCD11980B4D70087E89F /* InfoPlist.strings */; };
 		4F5AFCD51980B4D70087E89F /* TypingBattleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCD41980B4D70087E89F /* TypingBattleTests.m */; };
+		4F5AFCE01980BA740087E89F /* KLBPlayerData.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */; };
+		4F5AFCE31980BF840087E89F /* KLBWordManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCE21980BF840087E89F /* KLBWordManager.m */; };
+		4F5AFCE71980DE050087E89F /* KLBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCE61980DE050087E89F /* KLBConstants.m */; };
+		4F5AFCEA1980E76F0087E89F /* KLBTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCE91980E76F0087E89F /* KLBTimer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,14 @@
 		4F5AFCD01980B4D70087E89F /* TypingBattleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TypingBattleTests-Info.plist"; sourceTree = "<group>"; };
 		4F5AFCD21980B4D70087E89F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4F5AFCD41980B4D70087E89F /* TypingBattleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypingBattleTests.m; sourceTree = "<group>"; };
+		4F5AFCDE1980BA740087E89F /* KLBPlayerData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBPlayerData.h; sourceTree = "<group>"; };
+		4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBPlayerData.m; sourceTree = "<group>"; };
+		4F5AFCE11980BF840087E89F /* KLBWordManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBWordManager.h; sourceTree = "<group>"; };
+		4F5AFCE21980BF840087E89F /* KLBWordManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBWordManager.m; sourceTree = "<group>"; };
+		4F5AFCE51980DE050087E89F /* KLBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBConstants.h; sourceTree = "<group>"; };
+		4F5AFCE61980DE050087E89F /* KLBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBConstants.m; sourceTree = "<group>"; };
+		4F5AFCE81980E76F0087E89F /* KLBTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBTimer.h; sourceTree = "<group>"; };
+		4F5AFCE91980E76F0087E89F /* KLBTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBTimer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,7 +128,15 @@
 			isa = PBXGroup;
 			children = (
 				4F5AFCBC1980B4D70087E89F /* KLBAppDelegate.h */,
+				4F5AFCE51980DE050087E89F /* KLBConstants.h */,
+				4F5AFCE61980DE050087E89F /* KLBConstants.m */,
+				4F5AFCDE1980BA740087E89F /* KLBPlayerData.h */,
+				4F5AFCE11980BF840087E89F /* KLBWordManager.h */,
+				4F5AFCE21980BF840087E89F /* KLBWordManager.m */,
+				4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */,
 				4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */,
+				4F5AFCE81980E76F0087E89F /* KLBTimer.h */,
+				4F5AFCE91980E76F0087E89F /* KLBTimer.m */,
 				4F5AFCBF1980B4D70087E89F /* MainMenu.xib */,
 				4F5AFCC21980B4D70087E89F /* Images.xcassets */,
 				4F5AFCB11980B4D70087E89F /* Supporting Files */,
@@ -253,8 +273,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F5AFCE01980BA740087E89F /* KLBPlayerData.m in Sources */,
 				4F5AFCBE1980B4D70087E89F /* KLBAppDelegate.m in Sources */,
 				4F5AFCB71980B4D70087E89F /* main.m in Sources */,
+				4F5AFCEA1980E76F0087E89F /* KLBTimer.m in Sources */,
+				4F5AFCE71980DE050087E89F /* KLBConstants.m in Sources */,
+				4F5AFCE31980BF840087E89F /* KLBWordManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,6 +410,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingBattle/TypingBattle-Prefix.pch";
@@ -399,6 +424,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TypingBattle/TypingBattle-Prefix.pch";

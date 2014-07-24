@@ -17,9 +17,22 @@
  */
 
 #import <Cocoa/Cocoa.h>
+#import "KLBPlayerData.h"
 
 @interface KLBAppDelegate : NSObject <NSApplicationDelegate>
+{
+    IBOutlet NSTextField *labelQuizStringDisplay;
+    IBOutlet NSTextField *labelTimeUntilEnd;
+    IBOutlet NSTextField *labelScore;
+    IBOutlet NSTextField *tfAnswerField;
+    
+    KLBPlayerData *player;
+}
 
 @property (assign) IBOutlet NSWindow *window;
+
+- (void)setupIBNotifications;
+- (IBAction)submitTypedChars:(id)sender;
+- (void)changeQuizString:(id)sender;
 
 @end
