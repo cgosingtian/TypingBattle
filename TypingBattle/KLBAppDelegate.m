@@ -19,7 +19,24 @@
     // Insert code here to initialize your application    
     [self setupIBNotifications];
     
-    [self newGame];
+    //Activate the window of our application so that the alert below will not be minimized
+    [[NSApplication sharedApplication] activateIgnoringOtherApps:YES];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        NSAlert *alert = [[NSAlert alloc] init];
+        [alert addButtonWithTitle:@"New Game"];
+        [alert addButtonWithTitle:@"Exit"];
+        [alert setMessageText:@"WELCOME TO TYPING BATTLE"];
+        [alert setInformativeText:[NSString stringWithFormat:@"Type the words that you see in the text field within the time limit. Press ENTER to submit."]];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        
+        if ([alert runModal] == NSAlertFirstButtonReturn) {
+            [self newGame]; // new game
+        } else [[NSApplication sharedApplication] terminate:nil]; // exit
+        [alert release];
+    });
+    
+         //[self newGame];
 }
 
 -(IBAction)submitTypedChars:(id)sender
