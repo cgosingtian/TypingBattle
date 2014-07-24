@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F5AFCAB1980B4D70087E89F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AFCAA1980B4D70087E89F /* Cocoa.framework */; };
+		4F5AFCB51980B4D70087E89F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCB31980B4D70087E89F /* InfoPlist.strings */; };
+		4F5AFCB71980B4D70087E89F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCB61980B4D70087E89F /* main.m */; };
+		4F5AFCBB1980B4D70087E89F /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCB91980B4D70087E89F /* Credits.rtf */; };
+		4F5AFCBE1980B4D70087E89F /* KLBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */; };
+		4F5AFCC11980B4D70087E89F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCBF1980B4D70087E89F /* MainMenu.xib */; };
+		4F5AFCC31980B4D70087E89F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCC21980B4D70087E89F /* Images.xcassets */; };
+		4F5AFCCA1980B4D70087E89F /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AFCC91980B4D70087E89F /* XCTest.framework */; };
+		4F5AFCCB1980B4D70087E89F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AFCAA1980B4D70087E89F /* Cocoa.framework */; };
+		4F5AFCD31980B4D70087E89F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCD11980B4D70087E89F /* InfoPlist.strings */; };
+		4F5AFCD51980B4D70087E89F /* TypingBattleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCD41980B4D70087E89F /* TypingBattleTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F5AFCCC1980B4D70087E89F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F5AFC9F1980B4D70087E89F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F5AFCA61980B4D70087E89F;
+			remoteInfo = TypingBattle;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F5AFCA71980B4D70087E89F /* TypingBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypingBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F5AFCAA1980B4D70087E89F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		4F5AFCAD1980B4D70087E89F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		4F5AFCAE1980B4D70087E89F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4F5AFCAF1980B4D70087E89F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F5AFCB21980B4D70087E89F /* TypingBattle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TypingBattle-Info.plist"; sourceTree = "<group>"; };
+		4F5AFCB41980B4D70087E89F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F5AFCB61980B4D70087E89F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4F5AFCB81980B4D70087E89F /* TypingBattle-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TypingBattle-Prefix.pch"; sourceTree = "<group>"; };
+		4F5AFCBA1980B4D70087E89F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		4F5AFCBC1980B4D70087E89F /* KLBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBAppDelegate.h; sourceTree = "<group>"; };
+		4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KLBAppDelegate.m; sourceTree = "<group>"; };
+		4F5AFCC01980B4D70087E89F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		4F5AFCC21980B4D70087E89F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4F5AFCC81980B4D70087E89F /* TypingBattleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TypingBattleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F5AFCC91980B4D70087E89F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		4F5AFCD01980B4D70087E89F /* TypingBattleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TypingBattleTests-Info.plist"; sourceTree = "<group>"; };
+		4F5AFCD21980B4D70087E89F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		4F5AFCD41980B4D70087E89F /* TypingBattleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TypingBattleTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F5AFCA41980B4D70087E89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5AFCAB1980B4D70087E89F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F5AFCC51980B4D70087E89F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5AFCCB1980B4D70087E89F /* Cocoa.framework in Frameworks */,
+				4F5AFCCA1980B4D70087E89F /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F5AFC9E1980B4D70087E89F = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCB01980B4D70087E89F /* TypingBattle */,
+				4F5AFCCE1980B4D70087E89F /* TypingBattleTests */,
+				4F5AFCA91980B4D70087E89F /* Frameworks */,
+				4F5AFCA81980B4D70087E89F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F5AFCA81980B4D70087E89F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCA71980B4D70087E89F /* TypingBattle.app */,
+				4F5AFCC81980B4D70087E89F /* TypingBattleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F5AFCA91980B4D70087E89F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCAA1980B4D70087E89F /* Cocoa.framework */,
+				4F5AFCC91980B4D70087E89F /* XCTest.framework */,
+				4F5AFCAC1980B4D70087E89F /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F5AFCAC1980B4D70087E89F /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCAD1980B4D70087E89F /* AppKit.framework */,
+				4F5AFCAE1980B4D70087E89F /* CoreData.framework */,
+				4F5AFCAF1980B4D70087E89F /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		4F5AFCB01980B4D70087E89F /* TypingBattle */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCBC1980B4D70087E89F /* KLBAppDelegate.h */,
+				4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */,
+				4F5AFCBF1980B4D70087E89F /* MainMenu.xib */,
+				4F5AFCC21980B4D70087E89F /* Images.xcassets */,
+				4F5AFCB11980B4D70087E89F /* Supporting Files */,
+			);
+			path = TypingBattle;
+			sourceTree = "<group>";
+		};
+		4F5AFCB11980B4D70087E89F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCB21980B4D70087E89F /* TypingBattle-Info.plist */,
+				4F5AFCB31980B4D70087E89F /* InfoPlist.strings */,
+				4F5AFCB61980B4D70087E89F /* main.m */,
+				4F5AFCB81980B4D70087E89F /* TypingBattle-Prefix.pch */,
+				4F5AFCB91980B4D70087E89F /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F5AFCCE1980B4D70087E89F /* TypingBattleTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCD41980B4D70087E89F /* TypingBattleTests.m */,
+				4F5AFCCF1980B4D70087E89F /* Supporting Files */,
+			);
+			path = TypingBattleTests;
+			sourceTree = "<group>";
+		};
+		4F5AFCCF1980B4D70087E89F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F5AFCD01980B4D70087E89F /* TypingBattleTests-Info.plist */,
+				4F5AFCD11980B4D70087E89F /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F5AFCA61980B4D70087E89F /* TypingBattle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F5AFCD81980B4D70087E89F /* Build configuration list for PBXNativeTarget "TypingBattle" */;
+			buildPhases = (
+				4F5AFCA31980B4D70087E89F /* Sources */,
+				4F5AFCA41980B4D70087E89F /* Frameworks */,
+				4F5AFCA51980B4D70087E89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TypingBattle;
+			productName = TypingBattle;
+			productReference = 4F5AFCA71980B4D70087E89F /* TypingBattle.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F5AFCC71980B4D70087E89F /* TypingBattleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F5AFCDB1980B4D70087E89F /* Build configuration list for PBXNativeTarget "TypingBattleTests" */;
+			buildPhases = (
+				4F5AFCC41980B4D70087E89F /* Sources */,
+				4F5AFCC51980B4D70087E89F /* Frameworks */,
+				4F5AFCC61980B4D70087E89F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F5AFCCD1980B4D70087E89F /* PBXTargetDependency */,
+			);
+			name = TypingBattleTests;
+			productName = TypingBattleTests;
+			productReference = 4F5AFCC81980B4D70087E89F /* TypingBattleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F5AFC9F1980B4D70087E89F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = KLB;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "KLab Cyscorpions, Inc.";
+				TargetAttributes = {
+					4F5AFCC71980B4D70087E89F = {
+						TestTargetID = 4F5AFCA61980B4D70087E89F;
+					};
+				};
+			};
+			buildConfigurationList = 4F5AFCA21980B4D70087E89F /* Build configuration list for PBXProject "TypingBattle" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F5AFC9E1980B4D70087E89F;
+			productRefGroup = 4F5AFCA81980B4D70087E89F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F5AFCA61980B4D70087E89F /* TypingBattle */,
+				4F5AFCC71980B4D70087E89F /* TypingBattleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F5AFCA51980B4D70087E89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5AFCB51980B4D70087E89F /* InfoPlist.strings in Resources */,
+				4F5AFCC31980B4D70087E89F /* Images.xcassets in Resources */,
+				4F5AFCBB1980B4D70087E89F /* Credits.rtf in Resources */,
+				4F5AFCC11980B4D70087E89F /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F5AFCC61980B4D70087E89F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5AFCD31980B4D70087E89F /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F5AFCA31980B4D70087E89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5AFCBE1980B4D70087E89F /* KLBAppDelegate.m in Sources */,
+				4F5AFCB71980B4D70087E89F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F5AFCC41980B4D70087E89F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F5AFCD51980B4D70087E89F /* TypingBattleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F5AFCCD1980B4D70087E89F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F5AFCA61980B4D70087E89F /* TypingBattle */;
+			targetProxy = 4F5AFCCC1980B4D70087E89F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F5AFCB31980B4D70087E89F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5AFCB41980B4D70087E89F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		4F5AFCB91980B4D70087E89F /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5AFCBA1980B4D70087E89F /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		4F5AFCBF1980B4D70087E89F /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5AFCC01980B4D70087E89F /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		4F5AFCD11980B4D70087E89F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F5AFCD21980B4D70087E89F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F5AFCD61980B4D70087E89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		4F5AFCD71980B4D70087E89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4F5AFCD91980B4D70087E89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TypingBattle/TypingBattle-Prefix.pch";
+				INFOPLIST_FILE = "TypingBattle/TypingBattle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		4F5AFCDA1980B4D70087E89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TypingBattle/TypingBattle-Prefix.pch";
+				INFOPLIST_FILE = "TypingBattle/TypingBattle-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		4F5AFCDC1980B4D70087E89F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TypingBattle.app/Contents/MacOS/TypingBattle";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TypingBattle/TypingBattle-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "TypingBattleTests/TypingBattleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		4F5AFCDD1980B4D70087E89F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/TypingBattle.app/Contents/MacOS/TypingBattle";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TypingBattle/TypingBattle-Prefix.pch";
+				INFOPLIST_FILE = "TypingBattleTests/TypingBattleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F5AFCA21980B4D70087E89F /* Build configuration list for PBXProject "TypingBattle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F5AFCD61980B4D70087E89F /* Debug */,
+				4F5AFCD71980B4D70087E89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F5AFCD81980B4D70087E89F /* Build configuration list for PBXNativeTarget "TypingBattle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F5AFCD91980B4D70087E89F /* Debug */,
+				4F5AFCDA1980B4D70087E89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4F5AFCDB1980B4D70087E89F /* Build configuration list for PBXNativeTarget "TypingBattleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F5AFCDC1980B4D70087E89F /* Debug */,
+				4F5AFCDD1980B4D70087E89F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F5AFC9F1980B4D70087E89F /* Project object */;
+}
