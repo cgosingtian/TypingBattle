@@ -26,18 +26,17 @@
     IBOutlet NSTextField *labelTimeUntilEnd;
     IBOutlet NSTextField *labelScore;
     IBOutlet NSTextField *tfAnswerField;
-    
     KLBPlayerData *player;
-    
     KLBTimer *timer;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 
+- (void)dealloc;
 - (IBAction)submitTypedChars:(id)sender;
 - (void)changeQuizString:(id)sender;
 - (void)setupIBNotifications;
--(void)checkSubmittedString:(NSNotification *)notification;
--(void)updateTime;
+- (void)checkSubmittedString:(NSNotification *)notification;
+- (void)updateTime;
 
 @end

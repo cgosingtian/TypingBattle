@@ -8,14 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+static NSArray *wordsDefaultEasy;
+
 @interface KLBWordManager : NSObject
 
-+(NSArray *)easyWordList;
-
-//-(id)initWithWords:(NSArray *)w;
--(void)dealloc;
-
-+(NSString *)getRandomWordEasy;
-+(bool)checkInListEasy:(NSString *)item;
+- (void)dealloc;
++ (NSArray *)easyWordList;
++ (NSString *)getRandomWordEasy;
++ (bool)checkInListEasy:(NSString *)item;
 
 @end

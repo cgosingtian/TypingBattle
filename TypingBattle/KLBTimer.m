@@ -11,13 +11,19 @@
 
 @implementation KLBTimer
 
+- (void)dealloc
+{
+    [timer release];
+    timer = nil;
+    [super dealloc];
+}
+
 - (id)init
 {
     self = [super init];
     
     if (self)
     {
-        NSLog(@"Initializing thread object...");
         [self resetValues];
         
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -33,7 +39,7 @@
     return self;
 }
 
--(int)getTimeInt
+-(int)currentTimeInt
 {
     return currentTime;
 }
@@ -42,23 +48,21 @@
 {
     startTimer=true;
     [NSThread detachNewThreadSelector:@selector(countDown) toTarget:self withObject:nil];
-//    [timer start];
 }
 
 -(void)stopTimer
 {
-    startTimer=false;
+    startTimer = false;
 }
 
 -(void)resetValues
 {
-    currentTime=KLB_TIME_LIMIT_SECONDS;
-    startTimer=false;
+    currentTime = KLB_TIME_LIMIT_SECONDS;
+    startTimer = false;
 }
 
 -(void)countDown
 {
-    NSLog(@"Timer started!");
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init]; // Top-level pool
     
     // Do thread work here.

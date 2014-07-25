@@ -15,10 +15,11 @@
     int currentTime;
     bool startTimer;
 }
--(int)getTimeInt;
--(void)startTimer;
--(void)stopTimer;
--(void)resetValues;
--(void)countDown;
--(void)checkEndTime;
+- (void)dealloc;
+- (int)currentTimeInt;
+- (void)startTimer;
+- (void)stopTimer;
+- (void)resetValues;
+- (void)countDown;
+- (void)checkEndTime;
 @end

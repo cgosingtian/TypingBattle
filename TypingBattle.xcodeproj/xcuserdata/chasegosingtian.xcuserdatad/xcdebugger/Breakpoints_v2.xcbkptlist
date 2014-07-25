@@ -57,14 +57,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TypingBattle/KLBWordManager.h"
-            timestampString = "427876982.793123"
+            filePath = "TypingBattle/KLBConstants.h"
+            timestampString = "427878858.913437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "-dealloc"
-            landmarkType = "4">
+            startingLineNumber = "11"
+            endingLineNumber = "11">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -73,12 +71,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TypingBattle/KLBConstants.h"
-            timestampString = "427878858.913437"
+            filePath = "TypingBattle/KLBAppDelegate.m"
+            timestampString = "427946354.260817"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "11"
-            endingLineNumber = "11">
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "-endGame"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

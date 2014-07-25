@@ -8,8 +8,19 @@
 
 #import "KLBWordManager.h"
 
+static NSArray *wordsDefaultEasy;
+
 @implementation KLBWordManager
 
+- (void)dealloc
+{
+    [wordsDefaultEasy release];
+    wordsDefaultEasy = nil;
+    [super dealloc];
+}
+
+/*
+#pragma mark - Getters/Setters
 //- (id)initWithWords:(NSArray *)w
 //{
 //    self = [super init];
@@ -29,13 +40,6 @@
 //}
 //
 
-- (void)dealloc
-{
-    [self release];
-    [super dealloc];
-}
-
-#pragma mark - Getters/Setters
 //- (NSString *)getRandomWord
 //{
 //    if ([words count] > 0)
@@ -49,6 +53,7 @@
 //        return @"";
 //    }
 //}
+*/
 
 + (NSString *)getRandomWordEasy
 {
@@ -58,26 +63,27 @@
 
 + (NSArray *)easyWordList
 {
-    static NSArray *wordsDefaultEasy;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        wordsDefaultEasy = @[@"Jay",
-//                             @"Chase",
-//                             @"Kay",
-//                             @"Robert",
-//                             @"Geno",
-//                             @"Keith",
-//                             @"Gerald",
-//                             @"Jay Ar",
-//                             @"Pam",
-//                             @"Lem",
-//                             @"Romz",
-//                             @"Tan",
-//                             @"Joseph",
-//                             @"Jeszy",
-//                             @"Charm",
-//                             @"Yeo"];
-//    });
+    /*
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        wordsDefaultEasy = @[@"Jay",
+                             @"Chase",
+                             @"Kay",
+                             @"Robert",
+                             @"Geno",
+                             @"Keith",
+                             @"Gerald",
+                             @"Jay Ar",
+                             @"Pam",
+                             @"Lem",
+                             @"Romz",
+                             @"Tan",
+                             @"Joseph",
+                             @"Jeszy",
+                             @"Charm",
+                             @"Yeo"];
+    });
+     */
     
     wordsDefaultEasy = @[@"Jay",
                          @"Chase",

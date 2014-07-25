@@ -25,6 +25,11 @@ NSString* const KLB_STOP_TIMER = @"StopTimer";
 
 @implementation KLBConstants
 
-
+- (void)dealloc
+{
+    // strings are never deallocated
+    // see http://stackoverflow.com/questions/5769769/do-i-need-to-release-a-constant-nsstring
+    [super dealloc];
+}
 
 @end
