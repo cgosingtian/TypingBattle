@@ -25,7 +25,6 @@ extern NSString* const KLB_STOP_TIMER;
 
 @interface KLBConstants : NSObject
 
-
-
+- (void)dealloc;
 
 @end

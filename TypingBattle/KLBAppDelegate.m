@@ -14,6 +14,27 @@
 
 @implementation KLBAppDelegate
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
+    [labelQuizStringDisplay release];
+    [labelTimeUntilEnd release];
+    [labelScore release];
+    [tfAnswerField release];
+    [player release];
+    [timer release];
+    
+    labelQuizStringDisplay = nil;
+    labelTimeUntilEnd = nil;
+    labelScore = nil;
+    tfAnswerField = nil;
+    player = nil;
+    timer = nil;
+    
+    [super dealloc];
+}
+
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application    
@@ -27,32 +48,16 @@
         [alert addButtonWithTitle:@"New Game"];
         [alert addButtonWithTitle:@"Exit"];
         [alert setMessageText:@"WELCOME TO TYPING BATTLE"];
-        [alert setInformativeText:[NSString stringWithFormat:@"Type the words that you see in the text field within the time limit. Press ENTER to submit."]];
+        [alert setInformativeText: [NSString stringWithFormat:@"Type the words that you see in the text field within the time limit. Press ENTER to submit."]];
         [alert setAlertStyle:NSWarningAlertStyle];
         
         if ([alert runModal] == NSAlertFirstButtonReturn) {
-            [self newGame]; // new game
-        } else [[NSApplication sharedApplication] terminate:nil]; // exit
+            [self newGame];
+        } else [[NSApplication sharedApplication] terminate:nil];
         [alert release];
     });
     
          //[self newGame];
-}
-
--(IBAction)submitTypedChars:(id)sender
-{
-    NSDictionary * message = @{KLB_ANSWER_KEY : [tfAnswerField stringValue]};
-    
-    NSLog(@"Trying to send answer \"%@\"...",[message valueForKey:KLB_ANSWER_KEY]);
-    
-    [[NSNotificationCenter defaultCenter]
-        postNotificationName:KLB_SUBMIT_NOTIFICATION
-                      object:nil
-                    userInfo:message];
-}
-- (void)changeQuizString:(id)sender
-{
-    [labelQuizStringDisplay setStringValue:[NSString stringWithFormat:@"%@",[KLBWordManager getRandomWordEasy]]];
 }
 
 -(void)setupIBNotifications
@@ -79,44 +84,66 @@
                                                  name:KLB_TIME_DONE
                                                object:nil];
 }
+
+-(IBAction)submitTypedChars:(id)sender
+{
+    NSDictionary * message = @{KLB_ANSWER_KEY : [tfAnswerField stringValue]};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_NOTIFICATION
+                                                        object:nil
+                                                      userInfo:message];
+}
+
+- (void)changeQuizString:(id)sender
+{
+    [labelQuizStringDisplay setStringValue:[NSString stringWithFormat:@"%@",[KLBWordManager getRandomWordEasy]]];
+}
+
 -(void)checkSubmittedString:(NSNotification *)notification
 {
     if ([[labelQuizStringDisplay stringValue] isEqualToString:[tfAnswerField stringValue]])
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE object:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
+                                                            object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
+                                                            object:nil];
         [tfAnswerField setStringValue:@""];
         [tfAnswerField becomeFirstResponder];
     }
     else
     {
-        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
+                                                            object:nil];
     }
 }
+
 -(void)updateScore
 {
-    [labelScore setStringValue:[NSString stringWithFormat:@"%ld",(long)[player getScore]]];
+    [labelScore setStringValue:[NSString stringWithFormat:@"%ld",(long)[player score]]];
 }
+
 -(void)updateTime
 {
-    [labelTimeUntilEnd setStringValue:[NSString stringWithFormat:@"%ld",(long)[timer getTimeInt]]];
+    [labelTimeUntilEnd setStringValue:[NSString stringWithFormat:@"%ld",(long)[timer currentTimeInt]]];
 }
+
 -(void)endGame
 {
-    // this happens when time is over
-    //tell timer to stop
-    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_STOP_TIMER object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_STOP_TIMER
+                                                        object:nil];
+    
     //prevent input
     [tfAnswerField setSelectable:false];
     [tfAnswerField setEditable:false];
     [[tfAnswerField window] makeFirstResponder:nil];
+    
     //show ending alert; run this on the main queue to prevent occasional crashing
     dispatch_async(dispatch_get_main_queue(), ^{
             NSAlert *alert = [[NSAlert alloc] init];
             [alert addButtonWithTitle:@"New Game"];
             [alert addButtonWithTitle:@"Exit"];
             [alert setMessageText:@"GAME OVER"];
-            [alert setInformativeText:[NSString stringWithFormat:@"Your score was %ld",(long)[player getScore]]];
+            [alert setInformativeText:[NSString stringWithFormat:@"Your score was %ld",(long)[player score]]];
             [alert setAlertStyle:NSWarningAlertStyle];
         
             if ([alert runModal] == NSAlertFirstButtonReturn) {
@@ -143,11 +170,8 @@
     [tfAnswerField setSelectable:true];
     [tfAnswerField setEditable:true];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_START_TIMER object:nil];
-    
-    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_START_TIMER
+                                                        object:nil];
 }
-
-// dealloc: remove all observers
 
 @end

@@ -11,6 +11,13 @@
 
 @implementation KLBPlayerData
 
+- (void) dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    
+    [super dealloc];
+}
+
 #pragma mark - Initializers
 
 - (id) initWithScore:(NSInteger)s
@@ -37,13 +44,6 @@
 
 - (id) init
 {
-//    self = [super init];
-//    
-//    if (self)
-//    {
-//        score = SCORE_STARTING;
-//    }
-    
     return [self initWithScore:KLB_SCORE_STARTING];
 }
 
@@ -53,12 +53,14 @@
     score += s;
     [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SCORE_UPDATED object:nil];
 }
+
 - (void) setScoreZero
 {
     score = 0;
     [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SCORE_UPDATED object:nil];
 }
-- (NSInteger) getScore
+
+- (NSInteger) score
 {
     return score;
 }
@@ -82,16 +84,6 @@
 - (void) resetValues
 {
     [self setScoreZero];
-}
-
-- (void) dealloc
-{
-    // release observerssssss
-    
-    
-    
-    [self release];
-    [super dealloc];
 }
 
 @end
