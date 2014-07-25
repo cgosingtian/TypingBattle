@@ -26,6 +26,10 @@
     [timer release];
     [self release];
     
+    // thought of releasing the window IBOutlet but there's no leak
+    // in the profiler
+    //[_window release];
+    
     // the reason why we nil these objects is to prevent crashing
     // in case these objects are referred to - doing something to
     // nil does nothing in objective-c
@@ -109,24 +113,25 @@
                                                             object:nil];
         [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
                                                             object:nil];
-        [tfAnswerField setStringValue:@""];
-        [tfAnswerField becomeFirstResponder];
+        // empty the answer field's contents
+        [self focusAnswerField:true];
     }
     else
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
                                                             object:nil];
+        // we don't empty the answer field's contents if wrong to allow quick editing
     }
 }
 
 -(void)updateScore
 {
-    [labelScore setStringValue:[NSString stringWithFormat:@"%ld",(long)[player score]]];
+    [labelScore setStringValue:[NSString stringWithFormat:@"%ld",[player score]]];
 }
 
 -(void)updateTime
 {
-    [labelTimeUntilEnd setStringValue:[NSString stringWithFormat:@"%ld",(long)[timer currentTimeInt]]];
+    [labelTimeUntilEnd setStringValue:[NSString stringWithFormat:@"%d",[timer currentTimeInt]]];
 }
 
 -(void)endGame
@@ -137,10 +142,9 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:KLB_STOP_TIMER
                                                         object:nil];
     
-    //prevent input
-    [tfAnswerField setSelectable:false];
-    [tfAnswerField setEditable:false];
-    [[tfAnswerField window] makeFirstResponder:nil];
+    //prevent input to answer text field
+    [self setAnswerFieldStatus:false];
+    [self focusAnswerField:false];
     
     //show ending alert; run this on the main queue to prevent occasional crashing
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -160,7 +164,7 @@
 
 -(void) newGame
 {
-    [self changeQuizString:nil];
+    [self changeQuizString:nil]; // display a quiz word
  
     if (!player)
     {
@@ -172,13 +176,30 @@
         timer = [[KLBTimer alloc]init];
     } else [timer resetValues];
     
-    [tfAnswerField setSelectable:true];
-    [tfAnswerField setEditable:true];
-    [tfAnswerField setStringValue:@""];
-    [tfAnswerField becomeFirstResponder];
+    //activate answer text field
+    [self setAnswerFieldStatus:true];
+    [self focusAnswerField:true];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:KLB_START_TIMER
                                                         object:nil];
+}
+
+- (void)focusAnswerField:(bool)focus
+{
+    [tfAnswerField setStringValue:@""];
+    if (focus)
+    {
+        [tfAnswerField becomeFirstResponder];
+    } else
+    {
+        [[tfAnswerField window] makeFirstResponder:nil];
+    }
+}
+
+- (void)setAnswerFieldStatus:(bool)flag
+{
+    [tfAnswerField setSelectable:flag];
+    [tfAnswerField setEditable:flag];
 }
 
 @end

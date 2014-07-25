@@ -705,7 +705,7 @@
                         </textFieldCell>
                     </textField>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" id="k13-w4-TUR">
-                        <rect key="frame" x="128" y="218" width="225" height="17"/>
+                        <rect key="frame" x="17" y="218" width="446" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Enter the word that appears below:" id="dPd-aK-ri5">
                             <font key="font" metaFont="system"/>

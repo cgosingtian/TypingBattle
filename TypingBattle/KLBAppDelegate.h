@@ -38,5 +38,7 @@
 - (void)setupIBNotifications;
 - (void)checkSubmittedString:(NSNotification *)notification;
 - (void)updateTime;
+- (void)focusAnswerField:(bool)focus;
+- (void)setAnswerFieldStatus:(bool)flag;
 
 @end
