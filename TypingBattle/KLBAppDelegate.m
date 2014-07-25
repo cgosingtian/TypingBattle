@@ -11,6 +11,7 @@
 #import "KLBWordManager.h"
 #import "KLBConstants.h"
 #import "KLBTimer.h"
+#import "KLBHighScoreManager.h"
 
 @implementation KLBAppDelegate
 
@@ -21,6 +22,7 @@
     [labelQuizStringDisplay release];
     [labelTimeUntilEnd release];
     [labelScore release];
+    [labelHighestScore release];
     [tfAnswerField release];
     [player release];
     [timer release];
@@ -37,6 +39,7 @@
     labelQuizStringDisplay = nil;
     labelTimeUntilEnd = nil;
     labelScore = nil;
+    labelHighestScore = nil;
     tfAnswerField = nil;
     player = nil;
     timer = nil;
@@ -135,6 +138,11 @@
     [labelTimeUntilEnd setStringValue:[NSString stringWithFormat:@"%d",[timer currentTimeInt]]];
 }
 
+-(bool)checkAndUpdateHighScore
+{
+    return [KLBHighScoreManager verifyHighScore:[player score] WriteToFile:YES];
+}
+
 -(void)endGame
 {
     // keep a reference to self so that we don't deallocate
@@ -147,26 +155,41 @@
     [self setAnswerFieldStatus:false];
     [self focusAnswerField:false];
     
+    bool highScore = [self checkAndUpdateHighScore];
+    
+    NSString *scoreMessage = @"";
+    if (highScore)
+    {
+        scoreMessage = [NSString stringWithFormat:@"HIGH SCORE! Your score was %ld", (long)[player score]];
+        [labelHighestScore setStringValue:[NSString stringWithFormat:@"%ld", (long)[player score]]];
+    }
+    else
+    {
+        scoreMessage = [NSString stringWithFormat:@"Your score was %ld", (long)[player score]];
+    }
+    
     //show ending alert; run this on the main queue to prevent occasional crashing
     dispatch_async(dispatch_get_main_queue(), ^{
             NSAlert *alert = [[NSAlert alloc] init];
             [alert addButtonWithTitle:@"New Game"];
             [alert addButtonWithTitle:@"Exit"];
             [alert setMessageText:@"GAME OVER"];
-            [alert setInformativeText:[NSString stringWithFormat:@"Your score was %ld",(long)[player score]]];
+            [alert setInformativeText:[NSString stringWithFormat:@"%@",scoreMessage]];
             [alert setAlertStyle:NSWarningAlertStyle];
         
             if ([alert runModal] == NSAlertFirstButtonReturn) {
                 [self newGame]; // new game
             } else [[NSApplication sharedApplication] terminate:nil]; // exit
+            [scoreMessage release];
             [alert release];
         });
-    }
+}
 
 -(void) newGame
 {
     [self changeQuizString:nil]; // display a quiz word
- 
+    [labelHighestScore setStringValue:
+        [NSString stringWithFormat:@"%ld", [KLBHighScoreManager readScoreFromFile]]];
     if (!player)
     {
         player = [[KLBPlayerData alloc] init];

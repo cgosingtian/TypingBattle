@@ -25,6 +25,7 @@
     IBOutlet NSTextField *labelQuizStringDisplay;
     IBOutlet NSTextField *labelTimeUntilEnd;
     IBOutlet NSTextField *labelScore;
+    IBOutlet NSTextField *labelHighestScore;
     IBOutlet NSTextField *tfAnswerField;
     KLBPlayerData *player;
     KLBTimer *timer;
