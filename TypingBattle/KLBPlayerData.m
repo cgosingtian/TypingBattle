@@ -67,16 +67,12 @@
 
 - (void) updateScore:(NSNotification *)notice
 {
-    NSLog(@"%@: Entered updateScore in player", [notice name]);
-    //if ([[[notice userInfo] valueForKey:ANSWER_KEY] isEqualToValue:[NSNumber numberWithInt:SCORE_CORRECT]])
     if ([[notice name] isEqualToString:KLB_SUBMIT_CORRECT])
     {
-        NSLog(@"attempting to increase score...");
         [self setScore:KLB_SCORE_CORRECT];
     }
     else
     {
-        NSLog(@"attempting to reduce score...");
         [self setScore:KLB_SCORE_WRONG_PENALTY];
     }
 }

@@ -24,7 +24,11 @@
     [tfAnswerField release];
     [player release];
     [timer release];
+    [self release];
     
+    // the reason why we nil these objects is to prevent crashing
+    // in case these objects are referred to - doing something to
+    // nil does nothing in objective-c
     labelQuizStringDisplay = nil;
     labelTimeUntilEnd = nil;
     labelScore = nil;
@@ -56,8 +60,6 @@
         } else [[NSApplication sharedApplication] terminate:nil];
         [alert release];
     });
-    
-         //[self newGame];
 }
 
 -(void)setupIBNotifications
@@ -129,6 +131,9 @@
 
 -(void)endGame
 {
+    // keep a reference to self so that we don't deallocate
+    [self retain];
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:KLB_STOP_TIMER
                                                         object:nil];
     
@@ -169,6 +174,8 @@
     
     [tfAnswerField setSelectable:true];
     [tfAnswerField setEditable:true];
+    [tfAnswerField setStringValue:@""];
+    [tfAnswerField becomeFirstResponder];
     
     [[NSNotificationCenter defaultCenter] postNotificationName:KLB_START_TIMER
                                                         object:nil];
