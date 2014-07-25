@@ -33,6 +33,7 @@
     // the reason why we nil these objects is to prevent crashing
     // in case these objects are referred to - doing something to
     // nil does nothing in objective-c
+    // basically we want to avoid ***dangling pointers***
     labelQuizStringDisplay = nil;
     labelTimeUntilEnd = nil;
     labelScore = nil;
