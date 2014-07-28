@@ -12,6 +12,7 @@
 #import "KLBConstants.h"
 #import "KLBTimer.h"
 #import "KLBHighScoreManager.h"
+#import "KLBStringFormatProtocol.h"
 
 @implementation KLBAppDelegate
 
@@ -77,10 +78,10 @@
                                                  name:KLB_CHANGE_QUIZ_STRING_NOTICE
                                                object:nil];
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(checkSubmittedString:)
-                                                 name:KLB_SUBMIT_NOTIFICATION
-                                               object:nil];
+//    [[NSNotificationCenter defaultCenter] addObserver:self
+//                                             selector:@selector(checkSubmittedString:)
+//                                                 name:KLB_SUBMIT_NOTIFICATION
+//                                               object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateScore)
                                                  name:KLB_SCORE_UPDATED
@@ -97,36 +98,42 @@
 
 -(IBAction)submitTypedChars:(id)sender
 {
-    NSDictionary * message = @{KLB_ANSWER_KEY : [tfAnswerField stringValue]};
+//    NSDictionary * message = @{KLB_ANSWER_KEY : [tfAnswerField stringValue]};
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_NOTIFICATION
+//                                                        object:nil
+//                                                      userInfo:message];
     
-    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_NOTIFICATION
-                                                        object:nil
-                                                      userInfo:message];
+    [self compareTwoStrings:[tfAnswerField stringValue] AndString:[labelQuizStringDisplay stringValue]];
+//    [self compareTwoStrings:[tfAnswerField stringValue] AndString:[labelQuizStringDisplay stringValue]];
 }
 
 - (void)changeQuizString:(id)sender
 {
     [labelQuizStringDisplay setStringValue:[NSString stringWithFormat:@"%@",[KLBWordManager getRandomWordEasy]]];
+
+    // empty the answer field's contents
+    [self focusAnswerField:true];
 }
 
--(void)checkSubmittedString:(NSNotification *)notification
-{
-    if ([[labelQuizStringDisplay stringValue] isEqualToString:[tfAnswerField stringValue]])
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
-                                                            object:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
-                                                            object:nil];
-        // empty the answer field's contents
-        [self focusAnswerField:true];
-    }
-    else
-    {
-        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
-                                                            object:nil];
-        // we don't empty the answer field's contents if wrong to allow quick editing
-    }
-}
+//-(void)checkSubmittedString:(NSNotification *)notification
+//{
+//    if ([[labelQuizStringDisplay stringValue] isEqualToString:[tfAnswerField stringValue]])
+//    {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
+//                                                            object:nil];
+//        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
+//                                                            object:nil];
+//        // empty the answer field's contents
+//        [self focusAnswerField:true];
+//    }
+//    else
+//    {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
+//                                                            object:nil];
+//        // we don't empty the answer field's contents if wrong to allow quick editing
+//    }
+//}
 
 -(void)updateScore
 {
@@ -224,6 +231,19 @@
 {
     [tfAnswerField setSelectable:flag];
     [tfAnswerField setEditable:flag];
+}
+
+#pragma mark - KLBStringFormatProtocol
+
+-(bool)compareTwoStrings:(NSString *)string1
+               AndString:(NSString *)string2
+{
+    if (!self.formattingDelegate)
+    {
+        self.formattingDelegate = [[KLBStringFormatter alloc] init];
+    }
+    [self.formattingDelegate setDelegate:self];
+    return [self.formattingDelegate compareTwoStrings:string1 AndString:string2];
 }
 
 @end
