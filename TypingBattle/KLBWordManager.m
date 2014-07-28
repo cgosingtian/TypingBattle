@@ -58,7 +58,7 @@ static NSArray *wordsDefaultEasy;
 + (NSString *)getRandomWordEasy
 {
     return [NSString stringWithFormat:@"%@",
-                [[[self class]easyWordList] objectAtIndex:arc4random_uniform([[[self class]easyWordList] count])]];
+                [[[self class]easyWordList] objectAtIndex:arc4random_uniform((u_int32_t)[[[self class]easyWordList] count])]];
 }
 
 + (NSArray *)easyWordList
@@ -101,7 +101,6 @@ static NSArray *wordsDefaultEasy;
                          @"Jeszy",
                          @"Charm",
                          @"Yeo"];
-
 
     return wordsDefaultEasy;
 }

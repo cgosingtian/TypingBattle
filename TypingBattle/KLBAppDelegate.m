@@ -27,16 +27,10 @@
     [tfAnswerField release];
     [player release];
     [timer release];
+    [_formattingDelegate release];
     [self release];
     
-    // thought of releasing the window IBOutlet but there's no leak
-    // in the profiler
-    //[_window release];
-    
-    // the reason why we nil these objects is to prevent crashing
-    // in case these objects are referred to - doing something to
-    // nil does nothing in objective-c
-    // basically we want to avoid ***dangling pointers***
+    // avoid dangling pointers by setting to nil
     labelQuizStringDisplay = nil;
     labelTimeUntilEnd = nil;
     labelScore = nil;
@@ -77,11 +71,10 @@
                                              selector:@selector(changeQuizString:)
                                                  name:KLB_CHANGE_QUIZ_STRING_NOTICE
                                                object:nil];
-    
-//    [[NSNotificationCenter defaultCenter] addObserver:self
-//                                             selector:@selector(checkSubmittedString:)
-//                                                 name:KLB_SUBMIT_NOTIFICATION
-//                                               object:nil];
+    /*[[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(checkSubmittedString:)
+                                                 name:KLB_SUBMIT_NOTIFICATION
+                                               object:nil];*/
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(updateScore)
                                                  name:KLB_SCORE_UPDATED
@@ -98,14 +91,13 @@
 
 -(IBAction)submitTypedChars:(id)sender
 {
-//    NSDictionary * message = @{KLB_ANSWER_KEY : [tfAnswerField stringValue]};
-//    
-//    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_NOTIFICATION
-//                                                        object:nil
-//                                                      userInfo:message];
+    /*NSDictionary * message = @{KLB_ANSWER_KEY : [tfAnswerField stringValue]};
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_NOTIFICATION
+                                                        object:nil
+                                                      userInfo:message];*/
     
     [self compareTwoStrings:[tfAnswerField stringValue] AndString:[labelQuizStringDisplay stringValue]];
-//    [self compareTwoStrings:[tfAnswerField stringValue] AndString:[labelQuizStringDisplay stringValue]];
 }
 
 - (void)changeQuizString:(id)sender
@@ -116,24 +108,24 @@
     [self focusAnswerField:true];
 }
 
-//-(void)checkSubmittedString:(NSNotification *)notification
-//{
-//    if ([[labelQuizStringDisplay stringValue] isEqualToString:[tfAnswerField stringValue]])
-//    {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
-//                                                            object:nil];
-//        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
-//                                                            object:nil];
-//        // empty the answer field's contents
-//        [self focusAnswerField:true];
-//    }
-//    else
-//    {
-//        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
-//                                                            object:nil];
-//        // we don't empty the answer field's contents if wrong to allow quick editing
-//    }
-//}
+/*-(void)checkSubmittedString:(NSNotification *)notification
+{
+    if ([[labelQuizStringDisplay stringValue] isEqualToString:[tfAnswerField stringValue]])
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
+                                                            object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
+                                                            object:nil];
+        // empty the answer field's contents
+        [self focusAnswerField:true];
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
+                                                            object:nil];
+        // we don't empty the answer field's contents if wrong to allow quick editing
+    }
+}*/
 
 -(void)updateScore
 {
