@@ -16,7 +16,7 @@
 
 - (id)initWithScore:(NSInteger)s;
 - (void)setScore:(NSInteger)s;
-- (void)setZero;
+- (void)setScoreZero;
 - (NSInteger)score;
 - (void)resetValues;
 

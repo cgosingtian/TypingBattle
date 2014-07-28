@@ -63,6 +63,7 @@
 		4F5AFCE61980DE050087E89F /* KLBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBConstants.m; sourceTree = "<group>"; };
 		4F5AFCE81980E76F0087E89F /* KLBTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBTimer.h; sourceTree = "<group>"; };
 		4F5AFCE91980E76F0087E89F /* KLBTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBTimer.m; sourceTree = "<group>"; };
+		4F5B87BC1985DB9000B17FF0 /* KLBStringFormatProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KLBStringFormatProtocol.h; sourceTree = "<group>"; };
 		4FB0D75A198224A1006152DF /* KLBHighScoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLBHighScoreManager.h; sourceTree = "<group>"; };
 		4FB0D75B198224A1006152DF /* KLBHighScoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBHighScoreManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,6 +139,7 @@
 				4F5AFCE21980BF840087E89F /* KLBWordManager.m */,
 				4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */,
 				4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */,
+				4F5B87BC1985DB9000B17FF0 /* KLBStringFormatProtocol.h */,
 				4FB0D75A198224A1006152DF /* KLBHighScoreManager.h */,
 				4FB0D75B198224A1006152DF /* KLBHighScoreManager.m */,
 				4F5AFCE81980E76F0087E89F /* KLBTimer.h */,

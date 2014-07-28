@@ -19,8 +19,9 @@
 #import <Cocoa/Cocoa.h>
 #import "KLBPlayerData.h"
 #import "KLBTimer.h"
+#import "KLBStringFormatProtocol.h"
 
-@interface KLBAppDelegate : NSObject <NSApplicationDelegate>
+@interface KLBAppDelegate : NSObject <NSApplicationDelegate,KLBStringFormatProtocol>
 {
     IBOutlet NSTextField *labelQuizStringDisplay;
     IBOutlet NSTextField *labelTimeUntilEnd;
@@ -32,12 +33,13 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
+@property (assign,nonatomic) KLBStringFormatter *formattingDelegate;
 
 - (void)dealloc;
 - (IBAction)submitTypedChars:(id)sender;
 - (void)changeQuizString:(id)sender;
 - (void)setupIBNotifications;
-- (void)checkSubmittedString:(NSNotification *)notification;
+//- (void)checkSubmittedString:(NSNotification *)notification;
 - (void)updateTime;
 - (void)focusAnswerField:(bool)focus;
 - (void)setAnswerFieldStatus:(bool)flag;
