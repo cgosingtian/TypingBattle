@@ -231,7 +231,7 @@
 
 -(void)stringComparisonResult:(bool)result
 {
-    NSLog(@"KLBStringFormatProtocol was followed!");
+    //NSLog(@"KLBStringFormatProtocol was followed!");
     if (result)
     {
         [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
@@ -251,7 +251,7 @@
 {
     if (!formattingDelegate)
     {
-        formattingDelegate = [[KLBStringFormatProtocol alloc] init];
+        formattingDelegate = [[KLBStringSameComparisonDelegate alloc] init];
     }
     [formattingDelegate setDelegate:self];
     

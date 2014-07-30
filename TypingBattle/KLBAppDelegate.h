@@ -20,6 +20,7 @@
 #import "KLBPlayerData.h"
 #import "KLBTimer.h"
 #import "KLBStringFormatProtocol.h"
+#import "KLBStringSameComparisonDelegate.h"
 
 @interface KLBAppDelegate : NSObject <NSApplicationDelegate,KLBStringFormatProtocol>
 {
@@ -33,7 +34,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign,nonatomic) KLBStringFormatProtocol *formattingDelegate;
+@property (assign,nonatomic) KLBStringSameComparisonDelegate *formattingDelegate;
 
 - (void)dealloc;
 - (IBAction)submitTypedChars:(id)sender;

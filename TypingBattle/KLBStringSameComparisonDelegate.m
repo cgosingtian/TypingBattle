@@ -1,16 +1,14 @@
 //
-//  KLBStringFormatProtocol.m
+//  KLBStringSameComparisonDelegate.m
 //  TypingBattle
 //
-//  Created by Chase Gosingtian on 7/28/14.
+//  Created by Chase Gosingtian on 7/30/14.
 //  Copyright (c) 2014 KLab Cyscorpions, Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import "KLBStringFormatProtocol.h"
-#import "KLBConstants.h"
+#import "KLBStringSameComparisonDelegate.h"
 
-@implementation KLBStringFormatProtocol : NSObject
+@implementation KLBStringSameComparisonDelegate
 
 @synthesize delegate;
 

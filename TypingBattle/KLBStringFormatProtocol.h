@@ -14,12 +14,3 @@
 -(void)stringComparisonResult:(bool)result;
 
 @end
-
-@interface KLBStringFormatProtocol : NSObject
-
-@property (assign,nonatomic) id<KLBStringFormatProtocol> delegate;
-
--(void)compareTwoStrings:(NSString *)string1 AndString:(NSString *)string2;
-
-@end
-
