@@ -33,7 +33,7 @@
 }
 
 @property (assign) IBOutlet NSWindow *window;
-@property (assign,nonatomic) KLBStringFormatter *formattingDelegate;
+@property (assign,nonatomic) KLBStringFormatProtocol *formattingDelegate;
 
 - (void)dealloc;
 - (IBAction)submitTypedChars:(id)sender;

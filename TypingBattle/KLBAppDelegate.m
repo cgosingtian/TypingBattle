@@ -16,6 +16,8 @@
 
 @implementation KLBAppDelegate
 
+@synthesize formattingDelegate;
+
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
@@ -27,7 +29,7 @@
     [tfAnswerField release];
     [player release];
     [timer release];
-    [_formattingDelegate release];
+    [formattingDelegate release];
     [self release];
     
     // avoid dangling pointers by setting to nil
@@ -97,7 +99,7 @@
                                                         object:nil
                                                       userInfo:message];*/
     
-    [self compareTwoStrings:[tfAnswerField stringValue] AndString:[labelQuizStringDisplay stringValue]];
+    [self delegateStringComparison:[tfAnswerField stringValue] AndString:[labelQuizStringDisplay stringValue]];
 }
 
 - (void)changeQuizString:(id)sender
@@ -227,15 +229,36 @@
 
 #pragma mark - KLBStringFormatProtocol
 
--(bool)compareTwoStrings:(NSString *)string1
+-(void)stringComparisonResult:(bool)result
+{
+    NSLog(@"KLBStringFormatProtocol was followed!");
+    if (result)
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_CHANGE_QUIZ_STRING_NOTICE
+                                                            object:nil];
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_CORRECT
+                                                            object:nil];
+    }
+    else
+    {
+        [[NSNotificationCenter defaultCenter] postNotificationName:KLB_SUBMIT_WRONG
+                                                            object:nil];
+    }
+}
+
+-(void)delegateStringComparison:(NSString *)string1
                AndString:(NSString *)string2
 {
-    if (!self.formattingDelegate)
+    if (!formattingDelegate)
     {
-        self.formattingDelegate = [[KLBStringFormatter alloc] init];
+        formattingDelegate = [[KLBStringFormatProtocol alloc] init];
     }
-    [self.formattingDelegate setDelegate:self];
-    return [self.formattingDelegate compareTwoStrings:string1 AndString:string2];
+    [formattingDelegate setDelegate:self];
+    
+    if ([formattingDelegate respondsToSelector:@selector(compareTwoStrings:AndString:)])
+    {
+       [formattingDelegate compareTwoStrings:string1 AndString:string2];
+    }
 }
 
 @end

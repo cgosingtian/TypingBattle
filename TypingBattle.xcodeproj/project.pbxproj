@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F37F24D1988A95B00A44046 /* KLBStringFormatProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F37F24C1988A95B00A44046 /* KLBStringFormatProtocol.m */; };
 		4F5AFCAB1980B4D70087E89F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F5AFCAA1980B4D70087E89F /* Cocoa.framework */; };
 		4F5AFCB51980B4D70087E89F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4F5AFCB31980B4D70087E89F /* InfoPlist.strings */; };
 		4F5AFCB71980B4D70087E89F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F5AFCB61980B4D70087E89F /* main.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F37F24C1988A95B00A44046 /* KLBStringFormatProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLBStringFormatProtocol.m; sourceTree = "<group>"; };
 		4F5AFCA71980B4D70087E89F /* TypingBattle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TypingBattle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F5AFCAA1980B4D70087E89F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		4F5AFCAD1980B4D70087E89F /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -140,6 +142,7 @@
 				4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */,
 				4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */,
 				4F5B87BC1985DB9000B17FF0 /* KLBStringFormatProtocol.h */,
+				4F37F24C1988A95B00A44046 /* KLBStringFormatProtocol.m */,
 				4FB0D75A198224A1006152DF /* KLBHighScoreManager.h */,
 				4FB0D75B198224A1006152DF /* KLBHighScoreManager.m */,
 				4F5AFCE81980E76F0087E89F /* KLBTimer.h */,
@@ -287,6 +290,7 @@
 				4F5AFCEA1980E76F0087E89F /* KLBTimer.m in Sources */,
 				4F5AFCE71980DE050087E89F /* KLBConstants.m in Sources */,
 				4F5AFCE31980BF840087E89F /* KLBWordManager.m in Sources */,
+				4F37F24D1988A95B00A44046 /* KLBStringFormatProtocol.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
