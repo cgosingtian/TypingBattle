@@ -229,7 +229,7 @@
 
 #pragma mark - KLBStringFormatProtocol
 
--(void)stringComparisonResult:(bool)result
+-(void)stringDidCompareWithResult:(bool)result
 {
     //NSLog(@"KLBStringFormatProtocol was followed!");
     if (result)

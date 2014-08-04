@@ -11,6 +11,6 @@
 
 @protocol KLBStringFormatProtocol <NSObject>
 
--(void)stringComparisonResult:(bool)result;
+-(void)stringDidCompareWithResult:(bool)result;
 
 @end

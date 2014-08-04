@@ -134,17 +134,17 @@
 		4F5AFCB01980B4D70087E89F /* TypingBattle */ = {
 			isa = PBXGroup;
 			children = (
+				4F5B87BC1985DB9000B17FF0 /* KLBStringFormatProtocol.h */,
+				4F37F24E1988C90100A44046 /* KLBStringSameComparisonDelegate.h */,
+				4F37F24F1988C90100A44046 /* KLBStringSameComparisonDelegate.m */,
 				4F5AFCBC1980B4D70087E89F /* KLBAppDelegate.h */,
 				4F5AFCBD1980B4D70087E89F /* KLBAppDelegate.m */,
 				4F5AFCE51980DE050087E89F /* KLBConstants.h */,
 				4F5AFCE61980DE050087E89F /* KLBConstants.m */,
 				4F5AFCDE1980BA740087E89F /* KLBPlayerData.h */,
+				4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */,
 				4F5AFCE11980BF840087E89F /* KLBWordManager.h */,
 				4F5AFCE21980BF840087E89F /* KLBWordManager.m */,
-				4F5AFCDF1980BA740087E89F /* KLBPlayerData.m */,
-				4F5B87BC1985DB9000B17FF0 /* KLBStringFormatProtocol.h */,
-				4F37F24E1988C90100A44046 /* KLBStringSameComparisonDelegate.h */,
-				4F37F24F1988C90100A44046 /* KLBStringSameComparisonDelegate.m */,
 				4FB0D75A198224A1006152DF /* KLBHighScoreManager.h */,
 				4FB0D75B198224A1006152DF /* KLBHighScoreManager.m */,
 				4F5AFCE81980E76F0087E89F /* KLBTimer.h */,

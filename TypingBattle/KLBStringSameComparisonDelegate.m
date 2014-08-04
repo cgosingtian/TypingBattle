@@ -16,11 +16,11 @@
 {
     if ([string1 isEqualToString:string2])
     {
-        [delegate stringComparisonResult:YES];
+        [delegate stringDidCompareWithResult:YES];
     }
     else
     {
-        [delegate stringComparisonResult:NO];
+        [delegate stringDidCompareWithResult:NO];
     }
 }
 
